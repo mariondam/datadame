@@ -12,4 +12,4 @@ client = EntsoePandasClient(api_key=entsoe_token)
 series_day_ahead_prices = client.query_day_ahead_prices(country_code, start = start, end = end)
 
 # To DataFrame
-df_day_ahead_prices = pd.Series.to_frame(series_day_ahead_prices).reset_index().rename(columns = {'index': 'date_time', 0: 'price_euro_per_mwh'})
+df_day_ahead_prices = pd.Series.to_frame(series_day_ahead_prices).reset_index().rename(columns = {'index': 'date_time', 0: 'price_euro_per_MWh'})
