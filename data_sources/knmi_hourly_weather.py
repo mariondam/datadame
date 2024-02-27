@@ -4,8 +4,8 @@ import requests
 # Example: create DataFrame with hourly KNMI weather data
 base_url = 'https://www.daggegevens.knmi.nl/klimatologie/'
 
-start_date = f'20230101'
-end_date = f'20231231'
+start_date = '20230101'
+end_date = '20231231'
 
 # Station 260: De Bilt
 # Vars: Q is radiation (J/m2 in that hour), T is average temperature
@@ -26,6 +26,7 @@ weather_df['T'] = weather_df['T'] / 10  # is in 0.1 degrees C, to degrees C
 weather_df['Q'] = weather_df['Q'] * (1 / 0.36) # is in J/m2, to W / m2
 
 # create date_time index, convert to Dutch timezone
+weather_df['hour'] = weather_df['hour'] - 1 # is from 1-24, to 0-23
 weather_df['date_time'] = pd.to_datetime(weather_df['date']) + pd.to_timedelta(weather_df['hour'].astype(int), unit='h')
 weather_df.index = weather_df.date_time
 weather_df = weather_df.drop(['date', 'hour', 'date_time'], axis = 1)
