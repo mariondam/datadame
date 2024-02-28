@@ -1,9 +1,9 @@
 import pandas as pd
 from entsoe import EntsoePandasClient
 
+# Example: fetch historic EPEX day-ahead prices from ENTSO-E
 entsoe_token = 'TOKEN_HERE'
 
-# Fetch historic EPEX day-ahead prices from ENTSO-E
 start = pd.Timestamp('20230101', tz='Europe/Amsterdam')
 end = pd.Timestamp('20240101', tz='Europe/Amsterdam')
 country_code = 'NL'  
