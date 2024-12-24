@@ -15,3 +15,6 @@
 ## pvlib: simulate solar panels
 - [Documentation pvlib](https://pvlib-python.readthedocs.io/en/stable/)
 - Example solar panels in the Netherlands, using KNMI weather data. See [this post](https://www.datadame.nl/data/zonnepanelen-simuleren-met-python/) for explanation (in Dutch).
+
+## Beautiful Soup: getting data from a website
+- [Documentation Beautiful Soup](https://pypi.org/project/beautifulsoup4/)
